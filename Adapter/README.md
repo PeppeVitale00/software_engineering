@@ -21,3 +21,7 @@ Il team di sviluppo del sistema decide di integrare una nuova libreria di pagame
 Il problema è presto risolto con l'utilizzo di una classe Adapter chiamata _PaymentAdapter_ che implementa l'interfaccia _PaymentProcessor_. Questa classe ha al suo interno un'istanza di _ThirdPartyPayment_ e nel metodo _processPayment (double amount)_, chiama il metodo _makePayment (double amount)_ dell'oggetto _thirdPartyPayment_.
 
 Ora il client può usare il nuovo metodo di pagamento di terze parte come faceva prima senza bisogno di sapere nulla della modifica apportata dal team al sistema.
+
+## Composizione
+Questa versione dell'Adapter viene chiamata 'Object'. Esiste un'altra versione del design pattern chiamata 'Class' (vedi https://github.com/PeppeVitale00/software_engineering/tree/main/Adapter(ClassVersion) ). 
+La versione Object sfrutta la **composizione** una tecnica che consente di costruire sistemi complessi combinando più parti. Nell'esempio. la composizione permette di adattare un interfaccia esistente _ThirdPartyPayment_ a un'altra interfaccia _PaymentProcessor_ senza modifiche al codice della classe esistente. Questo perchè la classe _PaymentAdapter_ contiene un'istanza di _ThirdPartyPayment_ a la utilizza per adattare l'interfaccia: l'oggetto _PaymentAdapter_ è composto dall'oggetto _ThirdpartyPayment_.
